@@ -40,12 +40,12 @@ body{
 }
 ul{
   font-size:0;
-  margin :24px;
+  margin :24px 0;
+  width: calc( 100% - 32px);
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 li{
-  width: calc( 100% - 32px);
   font-size: 14px;
   word-wrap: break-word;
   list-style-type: circle;
