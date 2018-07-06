@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Todo App</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>  
+<body>   
+    
+    <section ng-app="todoApp" ng-controller="todoCtrl" class="container">
+      <div class="form">
+        <form ng-submit="addTask()">
+        <input id="newTask" type="text" ng-model="newTask" autocomplete="off" placeholder="Add task..."></input>
+      </form>
+      </div>
+  <h2> Tasks </h2>
+      <ul class="newtask container">
+        <li ng-repeat="x in taskList"> {{x.task}} <span class="status" ng-click="taskDone($index)"> <i ng-class="x.status ? 'fas fa-redo' : 'fas fa-check'"> </i> </span> </li>
+      </ul>
+  <h2> Completed </h2>
+      <ul class="complete-task container">
+        <li ng-repeat="x in completedTaskList"> {{x.task}} <span class="status" ng-click="redoTask($index)"> <i ng-class="x.status ? 'fas fa-redo' : 'fas fa-check'"> </i> </span> </li>
+      </ul>
+    </section>
+    <script src="js/script.js"></script>
+  </body>
